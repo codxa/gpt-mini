@@ -1,1 +1,44 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siber Güvenlik Asistanı</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <!-- Sol Menü -->
+    <div class="sidebar">
+        <h2>Konular</h2>
+        <select id="topic">
+            {% for t in topics %}
+            <option value="{{ t }}">{{ t }}</option>
+            {% endfor %}
+        </select>
+        <button id="getTopicBtn">Seç</button>
 
+        <hr>
+
+        <button id="newChatBtn">+ Yeni Sohbet</button>
+
+        <h3>Geçmiş Sohbetler</h3>
+        <ul id="chatHistoryList"></ul>
+    </div>
+
+    <!-- Ana Sohbet Alanı -->
+    <div class="main">
+        <h1>Codza Siber Güvenlik Asistanı</h1>
+        <div id="chatArea" class="chat-area"></div>
+        <div class="input-area">
+            <!-- Belge Yükleme -->
+            <input type="file" id="fileInput" style="display:none">
+            <button id="uploadBtn">📂</button>
+
+            <input type="text" id="messageInput" placeholder="Mesajınızı yazın...">
+            <button id="sendBtn">Gönder</button>
+        </div>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
