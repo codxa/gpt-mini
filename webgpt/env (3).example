@@ -1,0 +1,3 @@
+OPENAI_API_KEY=buraya_kendi_openai_api_anahtarini_yaz
+LANGCHAIN_API_KEY=buraya_kendi_langchain_api_anahtarini_yaz
+LANGCHAIN_TRACING_V2=true
